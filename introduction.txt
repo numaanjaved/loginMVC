@@ -1,0 +1,4 @@
+Now that you have understood how it is working in javascript
+
+it is time to structure it according to 
+Model View Controller Architecture
