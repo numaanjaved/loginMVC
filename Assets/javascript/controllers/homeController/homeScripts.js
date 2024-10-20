@@ -1,5 +1,4 @@
 let runScripts = async () => {
-    let checkAuth = await scriptCreate("Authorization Checking Script", "./Assets/javascript/views/auth.js", 10);
     let header = await scriptCreate("Header Script", "./Assets/javascript/views/header.js", 20);
     let main = await scriptCreate("main Script", "./Assets/javascript/views/main.js", 30);
     let validationClass = await scriptCreate("Validation Class Script", "./Assets/javascript/models/Validation.js", 40);
@@ -22,7 +21,7 @@ let runScripts = async () => {
     let fromValidationScript = await scriptCreate("Form Validation script", "./Assets/javascript/controllers/formValidation.js", 175);
     let homePageScript = await scriptCreate("Home Page script", "./Assets/javascript/homePage.js", 190);
     let footerScript = await scriptCreate("Footer Script", "./Assets/javascript/views/footer.js", 200);
-    let scriptsArray = [checkAuth, header, main, validationClass, userClass, adminClass, formImgInputScript, formImgUploadScript, formTextInputScript, formUserPrivilege, formButtonsScript, charLimitScript, recordButtonScript, profilesDataDisplay, modalScript, refreshRecordScript, elementReferencesScript, rowRecordScript, errorMessagesScript, formResetScript, fromValidationScript, homePageScript, footerScript];
+    let scriptsArray = [header, main, validationClass, userClass, adminClass, formImgInputScript, formImgUploadScript, formTextInputScript, formUserPrivilege, formButtonsScript, charLimitScript, recordButtonScript, profilesDataDisplay, modalScript, refreshRecordScript, elementReferencesScript, rowRecordScript, errorMessagesScript, formResetScript, fromValidationScript, homePageScript, footerScript];
     return scriptsArray;
 };
 runScripts().then(val => console.log(val)).catch(err => console.log(err));

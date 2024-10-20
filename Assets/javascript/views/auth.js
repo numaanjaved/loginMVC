@@ -13,7 +13,7 @@ let getCookie = (cookieName) => {
 
 // both methods are working:
 if (document.cookie.includes("userLoggedIn")) {
-    console.log(`User available`);
+    window.location.href = "/home.html";
 } else {
     window.location.href = "/login.html";
     console.log(`No user Found`);

@@ -6,6 +6,7 @@ let runScripts = async () => {
     let errorMessageCont = await scriptCreate("Error Message Container and Array Script", "./Assets/javascript/views/errorContainers.js", 50);
     let errorMessage = await scriptCreate("Error Messages Script", "./Assets/javascript/views/form/errorMessages.js", 60);
     let loginValidationHandler = await scriptCreate("Login Validation", "./Assets/javascript/controllers/loginValidation.js", 70);
-    return [validationLogin, UserClass, AdminClass, loginPageUI, errorMessageCont, errorMessage, loginValidationHandler];
+    let scriptsArray = [validationLogin, UserClass, AdminClass, loginPageUI, errorMessageCont, errorMessage, loginValidationHandler]
+    return scriptsArray;
 };
 runScripts().then(val => console.log(val)).catch(err => console.log(err));
