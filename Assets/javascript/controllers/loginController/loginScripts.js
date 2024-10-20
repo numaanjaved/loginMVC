@@ -5,7 +5,7 @@ let runScripts = async () => {
     let loginPageUI = await scriptCreate("Login page UI script", "./Assets/javascript/views/loginPage/loginPageDisplay.js", 40);
     let errorMessageCont = await scriptCreate("Error Message Container and Array Script", "./Assets/javascript/views/errorContainers.js", 50);
     let errorMessage = await scriptCreate("Error Messages Script", "./Assets/javascript/views/form/errorMessages.js", 60);
-    let loginValidationHandler = await scriptCreate("Login Validation", "./Assets/javascript/controllers/loginValidation.js", 70);
+    let loginValidationHandler = await scriptCreate("Login Validation", "./Assets/javascript/controllers/loginController/loginValidation.js", 70);
     let scriptsArray = [validationLogin, UserClass, AdminClass, loginPageUI, errorMessageCont, errorMessage, loginValidationHandler]
     return scriptsArray;
 };
