@@ -12,18 +12,18 @@ let getCookie = (cookieName) => {
 };
 
 // both methods are working:
-if (document.cookie.includes("userLoggedIn")) {
-    window.location.href = "/home.html";
-} else {
-    window.location.href = "/login.html";
-    console.log(`No user Found`);
-}
-// window.addEventListener('load', () => {
-//     let loggedInUser = getCookie("userLoggedIn");
-//     if (loggedInUser !== "") {
-//         console.log(`User available`);
-//     } else {
-//         window.location.href = "/login.html";
-//         console.log(`No user Found`);
-//     }
-// });
+// if (document.cookie.includes("userLoggedIn")) {
+//     window.location.href = "/home.html";
+// } else {
+//     window.location.href = "/login.html";
+//     console.log(`No user Found`);
+// }
+window.addEventListener('load', () => {
+    let loggedInUser = getCookie("userLoggedIn");
+    if (loggedInUser !== "") {
+        window.location.href = "/home.html";
+    } else {
+        window.location.href = "/login.html";
+        console.log(`No user Found`);
+    }
+});
