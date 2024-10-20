@@ -1,6 +1,6 @@
 let runScripts = async () => {
-    let header = await scriptCreate("Header Script", "./Assets/javascript/views/header.js", 20);
-    let main = await scriptCreate("main Script", "./Assets/javascript/views/main.js", 30);
+    let header = await scriptCreate("Header Script", "./Assets/javascript/views/homeView/header.js", 20);
+    let main = await scriptCreate("main Script", "./Assets/javascript/views/homeView/main.js", 30);
     let validationClass = await scriptCreate("Validation Class Script", "./Assets/javascript/models/Validation.js", 40);
     let userClass = await scriptCreate("User class Script", "./Assets/javascript/models/User.js", 50);
     let adminClass = await scriptCreate("Admin class Script", "./Assets/javascript/models/Admin.js", 60);
@@ -10,17 +10,17 @@ let runScripts = async () => {
     let formUserPrivilege = await scriptCreate("From Text Input Script", "./Assets/javascript/views/form/userPrivilege.js", 100);
     let formButtonsScript = await scriptCreate("Form Buttons script", "./Assets/javascript/views/form/formButtons.js", 90);
     let charLimitScript = await scriptCreate("Characters Check Limit Script", "./Assets//javascript/views/form/charLimit.js", 100);
-    let recordButtonScript = await scriptCreate("Record Buttons Script script", "./Assets/javascript/views/recordButtons.js", 105);
-    let profilesDataDisplay = await scriptCreate("Profiles Data Display script", "./Assets/javascript/views/dataDisplay/profilesDataDisplay.js", 110);
-    let modalScript = await scriptCreate("Modal Script", "./Assets/javascript/views/modal.js", 110);
-    let refreshRecordScript = await scriptCreate("Refresh Record Script", "./Assets/javascript/views/refreshRecords.js", 120);
-    let elementReferencesScript = await scriptCreate("HTML element reference script", "./Assets/javascript/views/elementReferences.js", 130);
-    let rowRecordScript = await scriptCreate("Each Row of record script", "./Assets/javascript/views/dataDisplay/rowRecord.js", 140);
+    let recordButtonScript = await scriptCreate("Record Buttons Script script", "./Assets/javascript/views/homeView/recordButtons.js", 105);
+    let profilesDataDisplay = await scriptCreate("Profiles Data Display script", "./Assets/javascript/views/homeView/profilesDataDisplay.js", 110);
+    let modalScript = await scriptCreate("Modal Script", "./Assets/javascript/views/homeView/modal.js", 110);
+    let refreshRecordScript = await scriptCreate("Refresh Record Script", "./Assets/javascript/views/homeView/refreshRecords.js", 120);
+    let elementReferencesScript = await scriptCreate("HTML element reference script", "./Assets/javascript/views/homeView/elementReferences.js", 130);
+    let rowRecordScript = await scriptCreate("Each Row of record script", "./Assets/javascript/views/homeView/rowRecord.js", 140);
     let errorMessagesScript = await scriptCreate("Error Messages Script", "./Assets/javascript/views/form/errorMessages.js", 150);
     let formResetScript = await scriptCreate("form reset to default", "./Assets/javascript/views/form/formReset.js", 160);
     let fromValidationScript = await scriptCreate("Form Validation script", "./Assets/javascript/controllers/homeController/formValidation.js", 175);
-    let homePageScript = await scriptCreate("Home Page script", "./Assets/javascript/homePage.js", 190);
-    let footerScript = await scriptCreate("Footer Script", "./Assets/javascript/views/footer.js", 200);
+    let homePageScript = await scriptCreate("Home Page script", "./Assets/javascript/views/homeView/homePage.js", 190);
+    let footerScript = await scriptCreate("Footer Script", "./Assets/javascript/views/homeView/footer.js", 200);
     let scriptsArray = [header, main, validationClass, userClass, adminClass, formImgInputScript, formImgUploadScript, formTextInputScript, formUserPrivilege, formButtonsScript, charLimitScript, recordButtonScript, profilesDataDisplay, modalScript, refreshRecordScript, elementReferencesScript, rowRecordScript, errorMessagesScript, formResetScript, fromValidationScript, homePageScript, footerScript];
     return scriptsArray;
 };
