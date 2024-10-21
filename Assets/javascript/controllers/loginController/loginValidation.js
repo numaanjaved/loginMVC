@@ -22,10 +22,7 @@ let setCookie = (cookieName, cookieValue, expTime) => {
     let expire = new Date();
     expire.setTime(expire.getTime() + (expTime * 60 * 1000));
     let expireTimeUTC = expire.toUTCString();
-    let expireTimeLocal = expire.toString();
     document.cookie = `${cookieName}=${encodeURIComponent(cookieValue)};expires=${expireTimeUTC};path=/`;
-    console.log(`Expiration time in UTC: ${expireTimeUTC}`);
-    console.log(`Expiration time in local time: ${expireTimeLocal}`);
 };
 
 let loginFromReset = () => {
