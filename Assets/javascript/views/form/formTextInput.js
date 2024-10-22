@@ -93,11 +93,11 @@ createNewElement(["textArea", "user_bio_input", textAreaTypeContainer, null, tex
 let textAreaInfoMsgContainer = createNewElement(["div", "textArea_Info_msg_container", textAreaTypeContainer]);
 createNewElement(["span", "limit_text", textAreaInfoMsgContainer, `0/300`]);
 createNewElement(["span", "limit_exceed_text", textAreaInfoMsgContainer]);
+let selectContainer = createNewElement(["div", "select_container", inputTypeContainer]);
+createNewElement(["label", "text_form_labels", selectContainer, `Choose User Type`, { for: `select_user`, id: "choose_user_heading" }]);
 
-createNewElement(["label", "text_form_labels", inputTypeContainer, `Choose User Type`, { for: `select_user`, id: "choose_user_heading" }]);
-
-createNewElement(["span", ["error_msg", "userType_error"], inputTypeContainer]);
-let selectUserType = createNewElement(["select", "select_user_type", inputTypeContainer, null,
+createNewElement(["span", ["error_msg", "userType_error"], selectContainer]);
+let selectUserType = createNewElement(["select", "select_user_type", selectContainer, null,
 	{ name: "select_user", id: "select_user" }]);
 let userBtn = createNewElement(["option", "userOption", selectUserType, `User`, { value: "User", id: "user_option", selected: "selected" }]);
 let adminBtn = createNewElement(["option", "userOption", selectUserType, `Admin`, { value: "Admin", id: "admin_option" }]);

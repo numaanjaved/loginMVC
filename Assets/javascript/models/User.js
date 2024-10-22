@@ -40,7 +40,6 @@ class User {
     }
   }
   update([firstName, lastName, email, contact, address, bio, userPicture]) {
-    // let userIndex = usersDataArray.findIndex((user) => user.getID() === this.getID());
     this.setFirstName(firstName);
     this.setLastName(lastName);
     this.setEmail(email);

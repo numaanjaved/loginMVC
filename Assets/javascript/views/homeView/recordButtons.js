@@ -21,10 +21,8 @@ let updateAdmin = (admin) => {
 	}
 };
 let hideOptions = () => {
-	let select = document.getElementById(`select_user`);
-	let selectUserHeading = document.getElementById(`choose_user_heading`);
-	select.style.display = "none";
-	selectUserHeading.style.display = "none";
+	let selectContainer = document.querySelector(".select_container");
+	selectContainer.style.display = "none";
 };
 let readProfile = (id) => {
 	let records = document.querySelectorAll(`.individual_user_data`);

@@ -20,7 +20,6 @@ imgInput.addEventListener("change", (event) => {
         reader.readAsDataURL(file);
     }
 });
-// Image information msg
 let imgUploadBtn = document.querySelector(".choose_img_label");
 let imgInfoMsg = document.querySelector("#img_info");
 imgUploadBtn.addEventListener("mouseenter", () => {

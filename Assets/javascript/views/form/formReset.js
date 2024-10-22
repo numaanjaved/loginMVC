@@ -3,10 +3,9 @@ let fromReset = () => {
     adminAttContainer.style.display = "none";
     admin_heading.style.display = "none";
     imgDisplay.src = "./Assets/images/default_profile.png";
-    let select = document.getElementById(`select_user`);
-    let selectUserHeading = document.getElementById(`choose_user_heading`);
-    select.style.display = "flex";
-    selectUserHeading.style.display = "block";
+    let selectContainer = document.querySelector(".select_container");
+    selectContainer.style.display = "block";
+    selectUserType.value === "User";
     attributes = [
         { attrName: userFirstName, regex: /^[a-zA-Z\s]*$/, length: 30 },
         { attrName: userLastName, regex: /^[a-zA-Z\s]*$/, length: 30 },

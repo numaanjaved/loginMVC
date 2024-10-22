@@ -46,7 +46,6 @@ let formValidation = () => {
 		imgDisplay.src
 	];
 	if (validationCheck) {
-		console.log(`Validation successful`)
 		if (selectUserType.value === "Admin") {
 			if (userIndexCheck === null) {
 				userData.push(userName.value, userPassword.value);

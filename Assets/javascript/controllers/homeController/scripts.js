@@ -9,7 +9,7 @@ let runScripts = async () => {
     let formTextInputScript = await scriptCreate("From Text Input Script", "./Assets/javascript/views/form/formTextInput.js", 90);
     let formUserPrivilege = await scriptCreate("From Text Input Script", "./Assets/javascript/views/form/userPrivilege.js", 100);
     let formButtonsScript = await scriptCreate("Form Buttons script", "./Assets/javascript/views/form/formButtons.js", 90);
-    let charLimitScript = await scriptCreate("Characters Check Limit Script", "./Assets//javascript/views/form/charLimit.js", 100);
+    let charLimitScript = await scriptCreate("Characters Check Limit Script", "./Assets/javascript/views/form/charLimit.js", 100);
     let recordButtonScript = await scriptCreate("Record Buttons Script script", "./Assets/javascript/views/homeView/recordButtons.js", 105);
     let profilesDataDisplay = await scriptCreate("Profiles Data Display script", "./Assets/javascript/views/homeView/profilesDataDisplay.js", 110);
     let modalScript = await scriptCreate("Modal Script", "./Assets/javascript/views/homeView/modal.js", 110);
