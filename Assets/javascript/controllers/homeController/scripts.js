@@ -18,7 +18,7 @@ let runScripts = async () => {
     let rowRecordScript = await scriptCreate("Each Row of record script", "./Assets/javascript/views/homeView/rowRecord.js", 140);
     let errorMessagesScript = await scriptCreate("Error Messages Script", "./Assets/javascript/views/form/errorMessages.js", 150);
     let formResetScript = await scriptCreate("form reset to default", "./Assets/javascript/views/form/formReset.js", 160);
-    let fromValidationScript = await scriptCreate("Form Validation script", "./Assets/javascript/controllers/homeController/formValidation.js", 175);
+    let fromValidationScript = await scriptCreate("Form Validation script", "./Assets/javascript/controllers/homeController/validation.js", 175);
     let homePageScript = await scriptCreate("Home Page script", "./Assets/javascript/views/homeView/homePage.js", 190);
     let footerScript = await scriptCreate("Footer Script", "./Assets/javascript/views/homeView/footer.js", 200);
     let scriptsArray = [header, main, validationClass, userClass, adminClass, formImgInputScript, formImgUploadScript, formTextInputScript, formUserPrivilege, formButtonsScript, charLimitScript, recordButtonScript, profilesDataDisplay, modalScript, refreshRecordScript, elementReferencesScript, rowRecordScript, errorMessagesScript, formResetScript, fromValidationScript, homePageScript, footerScript];
