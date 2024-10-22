@@ -30,3 +30,23 @@ let errorContainer = {
     login_userPassword: invalidLoginErr,
     image: image_error_msg
 };
+let nullMsg = (att, condition) => {
+    if (condition === false) {
+        errorMsg(att, `${error[0].errorName}: ${error[0].errorMessage}`);
+    } else { successMsg(att); }
+};
+let regexMsg = (att, condition) => {
+    if (condition === false) {
+        errorMsg(att, `${error[1].errorName}: ${error[1].errorMessage}`);
+    } else { successMsg(att); }
+};
+let lengthMsg = (att, condition) => {
+    if (condition === false) {
+        errorMsg(att, `${error[2].errorName}: ${error[2].errorMessage}`);
+    } else { successMsg(att); }
+};
+let pictureMsg = (att, condition) => {
+    if (condition === false) {
+        errorMsg(att, `${error[3].errorName}: ${error[3].errorMessage}`);
+    } else { successMsg(att) }
+}

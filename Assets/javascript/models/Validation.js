@@ -9,52 +9,38 @@ class Validation {
     setLength(length) { this.#len = length; };
     getLength() { return this.#len; };
     isNull(attribute) {
+        this.setAttribute(attribute);
         let check = true;
-        if (attribute.value == "" || attribute == null) {
-            check = false;
+        if (attribute.value == "" || attribute == null) { check = false; } else {
+            successMsg(this.getAttribute());
         }
         return check;
     };
     matchRegex(attribute, regexSyn) {
+        this.setAttribute(attribute);
+        this.setRegex(regexSyn);
         let check = true
         if (!attribute.value.match(regexSyn)) {
             check = false;
+        } else {
+            successMsg(this.getAttribute());
         }
         return check;
     };
     checkLength(attribute, maxLen) {
+        this.setAttribute(attribute);
+        this.setLength(maxLen)
         let check = true;
-        if (attribute.value.length > maxLen) {
-            check = false;
+        if (attribute.value.length > this.getLength()) { check = false; } else {
+            successMsg(this.getAttribute());
         }
         return check;
-    };
-    elemValidationCheck(attribute, regex, len) {
-        this.setAttribute(attribute);
-        this.setRegex(regex);
-        this.setLength(len);
-        if (!this.isNull(this.getAttribute())) {
-            errorMsg(this.getAttribute(), `${error[0].errorName}: ${error[0].errorMessage}`);
-            return false;
-        } else { successMsg(this.getAttribute()); }
-        if (!this.matchRegex(this.getAttribute(), this.getRegex())) {
-            errorMsg(this.getAttribute(), `${error[1].errorName}: ${error[1].errorMessage}`);
-            return false;
-        } else { successMsg(this.getAttribute()); }
-        if (!this.checkLength(this.getAttribute(), this.getLength())) {
-            errorMsg(this.getAttribute(), `${error[2].errorName}: ${error[2].errorMessage}`);
-            return false;
-        } else { successMsg(this.getAttribute()); }
-        return true;
     };
     profilePicValidation(attribute) {
         this.setAttribute(attribute);
         this.getAttribute();
         let imgCheck = true;
-        if (!this.getAttribute().files.length || imgDisplay.src.includes("default_profile.png")) {
-            imgCheck = false;
-            errorMsg(attribute, `${error[3].errorName}: ${error[3].errorMessage}`);
-        } else {
+        if (!this.getAttribute().files.length || imgDisplay.src.includes("default_profile.png")) { imgCheck = false; } else {
             successMsg(attribute);
             imgCheck = true;
         }

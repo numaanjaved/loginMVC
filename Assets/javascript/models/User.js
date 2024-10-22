@@ -61,9 +61,17 @@ class User {
       refreshRecords();
     }
   }
-  setElementValidation(attribute, regex, length) {
+  checkNull(att) {
     this.validator = new Validation();
-    if (!this.validator.elemValidationCheck(attribute, regex, length)) { return false; } else { return true; };
+    if (!this.validator.isNull(att)) { return false; } else { return true; };
+  }
+  matchRegex(att, regSyn) {
+    this.validator = new Validation();
+    if (!this.validator.matchRegex(att, regSyn)) { return false; } else { return true; };
+  }
+  checkLen(att, len) {
+    this.validator = new Validation();
+    if (!this.validator.checkLength(att, len)) { return false; } else { return true; };
   }
   setProfilePicValidation(attr) {
     this.validator = new Validation();

@@ -1,20 +1,38 @@
 let userIndexCheck = null;
+let attributes = [
+	{ attrName: userFirstName, regex: /^[a-zA-Z\s]*$/, length: 30 },
+	{ attrName: userLastName, regex: /^[a-zA-Z\s]*$/, length: 30 },
+	{ attrName: userEmail, regex: /^[a-zA-Z0-9]+(?:[._][a-zA-Z0-9]+)*@[A-Za-z]+\.[A-Za-z]{2,}$/, length: 100 },
+	{ attrName: userContactNumber, regex: /^[0-9]{2,}[0-9]{7,}$/, length: 20 },
+	{ attrName: userAddress, regex: /^[a-zA-Z0-9\s,.'-]*$/, length: 150 },
+	{ attrName: userBio, regex: /^[a-zA-Z0-9\s,.'-]*$/, length: 300 },
+];
 let formValidation = () => {
 	let validationCheck = true;
 	let userInstance = new User();
-	if (!userInstance.setElementValidation(userFirstName, /^[a-zA-Z\s]*$/, 30)) { validationCheck = false; }
-	if (!userInstance.setElementValidation(userFirstName, /^[a-zA-Z\s]*$/, 30)) { validationCheck = false; }
-	if (!userInstance.setElementValidation(userLastName, /^[a-zA-Z\s]*$/, 30)) { validationCheck = false; }
-	if (!userInstance.setElementValidation(userEmail, /^[a-zA-Z0-9]+(?:[._][a-zA-Z0-9]+)*@[A-Za-z]+\.[A-Za-z]{2,}$/, 100)) { validationCheck = false; }
-	if (!userInstance.setElementValidation(userContactNumber, /^[0-9]{2,}[0-9]{7,}$/, 20)) { validationCheck = false; }
-	if (!userInstance.setElementValidation(userAddress, /^[a-zA-Z0-9\s,.'-]*$/, 150)) { validationCheck = false; }
-	if (!userInstance.setElementValidation(userBio, /^[a-zA-Z0-9,.!?'\s-]*$/, 300)) { validationCheck = false; }
-	if (!userInstance.setProfilePicValidation(imgInput)) { validationCheck = false; }
-
 	if (selectUserType.value === "Admin") {
-		if (!userInstance.setElementValidation(userName, /^[a-zA-Z0-9_]*$/, 30)) { validationCheck = false; }
-		if (!userInstance.setElementValidation(userPassword, /^[a-zA-Z0-9_#@.&]*$/, 30)) { validationCheck = false; }
+		attributes.push({ attrName: userName, regex: /^[a-zA-Z0-9_]*$/, length: 30 },
+			{ attrName: userPassword, regex: /^[a-zA-Z0-9_#@.&$]*$/, length: 30 });
 	}
+	attributes.forEach((attribute) => {
+		if (!userInstance.checkNull(attribute.attrName)) {
+			validationCheck = false;
+			nullMsg(attribute.attrName, validationCheck);
+		} else {
+			if (!userInstance.matchRegex(attribute.attrName, attribute.regex)) {
+				validationCheck = false;
+				regexMsg(attribute.attrName, validationCheck);
+			}
+			else if (!userInstance.checkLen(attribute.attrName, attribute.length)) {
+				validationCheck = false;
+				lengthMsg(attribute.attrName, validationCheck);
+			}
+		}
+		if (!userInstance.setProfilePicValidation(imgInput)) {
+			validationCheck = false;
+			pictureMsg(imgInput, validationCheck);
+		}
+	});
 	let userData = [
 		userFirstName.value,
 		userLastName.value,
@@ -25,6 +43,7 @@ let formValidation = () => {
 		imgDisplay.src
 	];
 	if (validationCheck) {
+		console.log(`Validation successful`)
 		if (selectUserType.value === "Admin") {
 			if (userIndexCheck === null) {
 				userData.push(userName.value, userPassword.value);
