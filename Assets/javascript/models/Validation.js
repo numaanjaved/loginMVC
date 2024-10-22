@@ -76,8 +76,6 @@ class Validation {
     };
     createAdmin(userDataArr) {
         if (!this.adminExists()) {
-            errorMsg(selectUserType, `${error[4].errorName}: ${error[4].errorMessage}`);
-        } else {
             let userDataObj = new Admin();
             userDataObj.create(userDataArr);
             console.log(userDataObj);
@@ -91,7 +89,6 @@ class Validation {
                     localStorage.setItem('DataArray', JSON.stringify(usersDataArray));
                 }
             }
-            successMsg(selectUserType);
         }
     };
     updateAdmin(userDataArr) {
@@ -112,6 +109,6 @@ class Validation {
         let usersDataArray = [];
         if (storedData) { usersDataArray = JSON.parse(storedData); }
         let adminAccount = usersDataArray.find(usersData => usersData.userType === "Admin");
-        return adminAccount ? false : true;
+        return adminAccount ? true : false;
     }
 };

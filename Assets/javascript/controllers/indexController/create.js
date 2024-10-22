@@ -11,3 +11,9 @@ adminAcc.setProfilePic("./Assets/images/image2.jpg");
 adminAcc.setUserType("Admin");
 adminAcc.setID();
 localStorage.setItem('DataArray', JSON.stringify(usersDataArray));
+let LS = JSON.parse(localStorage.getItem('DataArray'));
+let existingAdmin = LS.find(userObj => userObj.userType === "Admin");
+if (!existingAdmin) {
+    usersDataArray.push(adminAcc);
+    localStorage.setItem('DataArray', JSON.stringify(usersDataArray));
+}

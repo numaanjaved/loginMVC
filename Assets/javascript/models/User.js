@@ -77,6 +77,10 @@ class User {
     this.validator = new Validation();
     if (!this.validator.profilePicValidation(attr)) { return false; } else { return true; }
   }
+  adminExist() {
+    this.validator = new Validation();
+    if (this.validator.adminExists()) { return true; } else { return false; }
+  }
   createNewUser(newUserData) {
     let newUser = new Validation();
     newUser.createUser(newUserData);

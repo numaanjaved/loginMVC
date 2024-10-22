@@ -1,11 +1,5 @@
 let loginForm = document.querySelector(`.login_form`);
-let adminAcc = new Admin();
-let LS = JSON.parse(localStorage.getItem('DataArray'));
-let existingAdmin = LS.find(userObj => userObj.userType === "Admin");
-if (!existingAdmin) {
-    usersDataArray.push(adminAcc);
-    localStorage.setItem('DataArray', JSON.stringify(usersDataArray));
-}
+let adminAcc = new Admin()
 let loginFromReset = () => { loginForm.reset(); };
 let loginValidation = () => {
     let validationCheck = true;

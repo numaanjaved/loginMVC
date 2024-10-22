@@ -33,6 +33,9 @@ let formValidation = () => {
 			pictureMsg(imgInput, validationCheck);
 		}
 	});
+	if (userInstance.adminExist()) {
+		adminMsg(true);
+	}
 	let userData = [
 		userFirstName.value,
 		userLastName.value,

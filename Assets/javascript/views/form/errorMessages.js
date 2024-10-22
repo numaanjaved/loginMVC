@@ -50,3 +50,8 @@ let pictureMsg = (att, condition) => {
         errorMsg(att, `${error[3].errorName}: ${error[3].errorMessage}`);
     } else { successMsg(att) }
 }
+let adminMsg = (condition) => {
+    if (condition === true) {
+        errorMsg(selectUserType, `${error[4].errorName}: ${error[4].errorMessage}`);
+    } else { successMsg(selectUserType) }
+}
