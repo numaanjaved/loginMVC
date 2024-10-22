@@ -1,6 +1,6 @@
 let indexScript = async () => {
-    let checkAuth = await scriptCreate("index Scripts", "./Assets/javascript/controllers/indexController/scripts.js", 0);
-    return checkAuth;
+    let script = await scriptCreate("index Scripts", "./Assets/javascript/controllers/indexController/scripts.js", 0);
+    return script;
 }
 indexScript().then(val => console.log(val)).catch(err => console.log(err));
 window.addEventListener('load', () => {
