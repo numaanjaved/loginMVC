@@ -34,10 +34,12 @@ class Admin extends User {
         Admin Name: ${this.getAdminName()}\n
         Password: ${this.getPassword()}`);
     }
-    CheckValidation(userName, userPass) {
+    checkNull(adminUserName, adminPassword) {
         this.validator = new LoginValidation();
-        if (!this.validator.checkLoginValidation(userName, userPass)) {
-            return false;
-        } else { return true; }
+        if (!this.validator.isNull(adminUserName, adminPassword)) { return false; } else { return true; }
+    }
+    invalidLogin(adminUserName, adminPassword) {
+        this.validator = new LoginValidation();
+        if (!this.validator.invalidLogin(adminUserName, adminPassword)) { return false; } else { return true; }
     }
 };

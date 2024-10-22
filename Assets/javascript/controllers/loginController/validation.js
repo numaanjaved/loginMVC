@@ -3,7 +3,15 @@ let adminAcc = new Admin()
 let loginFromReset = () => { loginForm.reset(); };
 let loginValidation = () => {
     let validationCheck = true;
-    if (!adminAcc.CheckValidation(loginUserName, loginUserPassword)) { validationCheck = false };
+    if (!adminAcc.checkNull(loginUserName, loginUserPassword)) {
+        validationCheck = false;
+        loginNullMsg(loginUserName, validationCheck);
+    } else {
+        if (!adminAcc.invalidLogin(loginUserName, loginUserPassword)) {
+            validationCheck = false;
+            invalidLoginMsg(loginUserName, validationCheck);
+        }
+    }
     if (validationCheck) {
         return true;
     }

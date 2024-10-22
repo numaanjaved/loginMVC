@@ -7,4 +7,4 @@ setTimeout(() => {
     if (loggedInUser()) {
         window.location.href = "/home.html";
     } else { window.location.href = "/login.html"; }
-}, 100);
+}, 150);

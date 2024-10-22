@@ -29,22 +29,4 @@ class LoginValidation {
         if (!this.userPasswordValidation(userPass, adminObj)) { MatchCheck = false; }
         return MatchCheck;
     }
-    checkLoginValidation(userName, userPassword) {
-        let validateData = true;
-        this.setUserName(userName);
-        this.setUserPassword(userPassword)
-        if (!this.isNull(this.getUserName(), this.getUserPassword())) {
-            errorMsg(this.getUserName(), `${error[0].errorName}: ${error[0].errorMessage}`);
-            validateData = false;
-        } else {
-            successMsg(this.getUserName());
-            if (!this.invalidLogin(this.getUserName(), this.getUserPassword())) {
-                errorMsg(this.getUserName(), `${error[5].errorName}: ${error[5].errorMessage}`);
-                validateData = false;
-            } else {
-                successMsg(this.getUserName());
-            }
-        }
-        return validateData;
-    }
 };

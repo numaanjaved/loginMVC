@@ -48,10 +48,20 @@ let lengthMsg = (att, condition) => {
 let pictureMsg = (att, condition) => {
     if (condition === false) {
         errorMsg(att, `${error[3].errorName}: ${error[3].errorMessage}`);
-    } else { successMsg(att) }
+    } else { successMsg(att); }
 }
 let adminMsg = (condition) => {
     if (condition === true) {
         errorMsg(selectUserType, `${error[4].errorName}: ${error[4].errorMessage}`);
-    } else { successMsg(selectUserType) }
+    } else { successMsg(selectUserType); }
+}
+let loginNullMsg = (att, condition) => {
+    if (condition === false) {
+        errorMsg(att, `${error[0].errorName}: ${error[0].errorMessage}`);
+    } else { successMsg(att); }
+}
+let invalidLoginMsg = (att, condition) => {
+    if (condition === false) {
+        errorMsg(att, `${error[5].errorName}: ${error[5].errorMessage}`);
+    } else { successMsg(att); }
 }
